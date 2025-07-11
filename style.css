@@ -522,18 +522,27 @@ body.register-page {
   75% { color: blue; }
   100% { color: purple; }
 }
-/* 🔁 GIF Loader Styling */
 .gif-loader {
-  display: none;
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 9999;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 40px;
+}
+
+.gif-loader.active {
+  display: flex; /* show when active class is added */
 }
 
 .gif-loader img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   margin-bottom: 10px;
 }
 
