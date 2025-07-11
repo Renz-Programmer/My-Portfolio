@@ -522,34 +522,6 @@ body.register-page {
   75% { color: blue; }
   100% { color: purple; }
 }
-/* 🔁 Inline Loader */
-.inline-loader {
-  display: none;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.inline-loader .spinner {
-  border: 6px solid #ccc;
-  border-top: 6px solid #3498db;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 1s linear infinite;
-  margin: 0 auto 10px;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.inline-loader .loader-text {
-  font-size: 1rem;
-  color: #333;
-  font-weight: bold;
-}
 /* 🔁 GIF Loader Styling */
 .gif-loader {
   display: none;
