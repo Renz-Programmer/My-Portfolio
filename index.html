@@ -55,10 +55,10 @@
       </div>
     </section>
 
-    <!-- 🔁 Inline Loader -->
-    <div id="inline-loader" class="inline-loader">
-      <div class="spinner"></div>
-      <div class="loader-text">Loading...</div>
+    <!-- 🔁 GIF Loader Section -->
+    <div id="gif-loader" class="gif-loader">
+      <img src="loader.gif" alt="Loading..." />
+      <p>Loading...</p>
     </div>
   </main>
 
@@ -66,10 +66,10 @@
     <p>© 2025 My Website</p>
   </footer>
 
-  <!-- 🔁 JS to trigger inline loader -->
+  <!-- 🔁 JS to show loader and redirect -->
   <script>
     const links = document.querySelectorAll("nav a");
-    const inlineLoader = document.getElementById("inline-loader");
+    const gifLoader = document.getElementById("gif-loader");
 
     links.forEach(link => {
       const href = link.getAttribute("href");
@@ -77,11 +77,10 @@
       if (href && !href.startsWith("#") && !href.startsWith("mailto:")) {
         link.addEventListener("click", function(event) {
           event.preventDefault();
-          inlineLoader.style.display = "block";
-          inlineLoader.querySelector(".loader-text").textContent = `Loading ${link.textContent} Page...`;
+          gifLoader.style.display = "flex";
           setTimeout(() => {
             window.location.href = href;
-          }, 1500); // delay before page redirects
+          }, 1500); // adjust delay if needed
         });
       }
     });
