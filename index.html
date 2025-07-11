@@ -2,85 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Website</title>
+  <title>My Website</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-home page-layout">
   <header>
     <div class="logo-title">
       <img src="feutech_10.png" alt="Logo" class="logo">
-      <h1 id="headline">Welcome to My Portfolio</h1>
+      <h1>My Website</h1>
     </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="registration.html">Registration</a>
+      <a href="project2.html">Project 2</a>
     </nav>
   </header>
 
   <main>
-    <section class="about-flex">
-      <img src="PIC.jpg" alt="My Photo" class="about-image">
-      <div class="about-content">
-        <h2>About Me</h2>
-        <p>Hello! I'm Lorenz V. Figuerra and I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). I’m passionate about web development, design, and creating user-friendly digital experiences.</p>
-      </div>
+    <section>
+      <h2>Welcome</h2>
+      <p>This is the home page content.</p>
     </section>
-
-    <hr class="section-divider">
-
-    <section class="projects-section">
-      <h1>My Projects</h1>
-      <div class="projects-grid">
-        <div class="project-card">
-          <a href="Project 2.html">
-            <h3>Project 2</h3>
-            <img src="PT BG.png" alt="Screenshot of Project 2" class="project-thumb">
-          </a>
-        </div>
-        <div class="project-card">
-          <a href="Project 3.html">
-            <h3>Project 3</h3>
-            <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
-          </a>
-        </div>
-        <div class="project-card">
-          <a href="Project 4.html">
-            <h3>Project 4</h3>
-            <img src="RESUME IMG.png" alt="Screenshot of Project 4" class="project-thumb">
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🔁 GIF Loader Section -->
-    <div id="gif-loader" class="gif-loader">
-      <img src="loader.gif" alt="Loading..." />
-      <p>Loading...</p>
-    </div>
   </main>
 
   <footer>
     <p>© 2025 My Website</p>
   </footer>
 
-  <!-- 🔁 JS to show loader and redirect -->
+  <!-- Loader (GIF must be in same folder or fix the path) -->
+  <div id="gif-loader" class="gif-loader">
+    <img src="loader.gif" alt="Loading...">
+    <p>Loading...</p>
+  </div>
+
   <script>
     const links = document.querySelectorAll("nav a");
-    const gifLoader = document.getElementById("gif-loader");
+    const loader = document.getElementById("gif-loader");
 
     links.forEach(link => {
       const href = link.getAttribute("href");
 
-      if (href && !href.startsWith("#") && !href.startsWith("mailto:")) {
-        link.addEventListener("click", function(event) {
+      if (href && !href.startsWith("#")) {
+        link.addEventListener("click", function (event) {
           event.preventDefault();
-          gifLoader.style.display = "flex";
+          loader.style.display = "flex";
+
           setTimeout(() => {
             window.location.href = href;
-          }, 1500); // adjust delay if needed
+          }, 1200);
         });
       }
     });
