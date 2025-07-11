@@ -36,24 +36,25 @@
     <p>Loading...</p>
   </div>
 
-  <script>
-    const links = document.querySelectorAll("nav a");
-    const loader = document.getElementById("gif-loader");
+<script>
+  const links = document.querySelectorAll("nav a");
+  const loader = document.getElementById("gif-loader");
 
-    links.forEach(link => {
-      const href = link.getAttribute("href");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    
+    if (href && !href.startsWith("#")) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        loader.style.display = "flex";
 
-      if (href && !href.startsWith("#")) {
-        link.addEventListener("click", function (event) {
-          event.preventDefault();
-          loader.style.display = "flex";
+        setTimeout(() => {
+          window.location.href = href;
+        }, 1200); // delay to show loader
+      });
+    }
+  });
+</script>
 
-          setTimeout(() => {
-            window.location.href = href;
-          }, 1200);
-        });
-      }
-    });
-  </script>
 </body>
 </html>
