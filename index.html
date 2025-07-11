@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Animated headline */
     #headline {
       animation: colorChange 5s infinite alternate;
     }
@@ -17,6 +18,45 @@
       50%  { color: green; }
       75%  { color: blue; }
       100% { color: purple; }
+    }
+
+    /* Tabs styling */
+    .code-tabs-section {
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .tab-buttons button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .tab-buttons button:hover {
+      background-color: #666;
+    }
+
+    .tab-content {
+      background-color: #1e1e1e;
+      color: #00ffcc;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 10px;
+      text-align: left;
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      overflow-x: auto;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
   </style>
 </head>
@@ -54,22 +94,71 @@
       <div class="projects-grid">
         <div class="project-card">
           <a href="Project 2.html">
-            <h3>Project 2</h3>
+            <h3 style="color: blue;">Project 2</h3>
             <img src="PT BG.png" alt="Screenshot of Project 2" class="project-thumb">
           </a>
         </div>
         <div class="project-card">
           <a href="Project 3.html">
-            <h3>Project 3</h3>
+            <h3 style="color: blue;">Project 3</h3>
             <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
           </a>
         </div>
         <div class="project-card">
           <a href="Project 4.html">
-            <h3>Project 4</h3>
+            <h3 style="color: blue;">Project 4</h3>
             <img src="RESUME IMG.png" alt="Screenshot of Project 4" class="project-thumb">
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- CODE TABS SECTION -->
+    <section class="code-tabs-section">
+      <h2>View Project Codes</h2>
+      <div class="tab-buttons">
+        <button onclick="showTab('project2')">Project 2 Code</button>
+        <button onclick="showTab('project3')">Project 3 Code</button>
+        <button onclick="showTab('project4')">Project 4 Code</button>
+      </div>
+
+      <div class="tab-content" id="project2">
+        <pre><code>
+// Example code for Project 2
+<!DOCTYPE html>
+<html>
+<head><title>Periodic Table</title></head>
+<body>
+  <!-- your Periodic Table HTML code -->
+</body>
+</html>
+        </code></pre>
+      </div>
+
+      <div class="tab-content" id="project3" style="display:none">
+        <pre><code>
+// Example code for Project 3
+<!DOCTYPE html>
+<html>
+<head><title>SDG Goals Website</title></head>
+<body>
+  <!-- your SDG Goals HTML code -->
+</body>
+</html>
+        </code></pre>
+      </div>
+
+      <div class="tab-content" id="project4" style="display:none">
+        <pre><code>
+// Example code for Project 4
+<!DOCTYPE html>
+<html>
+<head><title>Resume</title></head>
+<body>
+  <!-- your Resume HTML code -->
+</body>
+</html>
+        </code></pre>
       </div>
     </section>
   </main>
@@ -77,5 +166,13 @@
   <footer>
     <p>© 2025 My Website</p>
   </footer>
+
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => tab.style.display = 'none');
+      document.getElementById(tabId).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
