@@ -522,30 +522,21 @@ body.register-page {
   75% { color: blue; }
   100% { color: purple; }
 }
-/* 🔁 Loader Overlay */
-.loader-overlay {
+/* 🔁 Inline Loader */
+.inline-loader {
   display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 9999;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 40px;
 }
 
-/* Spinner circle */
-.spinner {
+.inline-loader .spinner {
   border: 6px solid #ccc;
   border-top: 6px solid #3498db;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   animation: spin 1s linear infinite;
-  margin-bottom: 16px;
+  margin: 0 auto 10px;
 }
 
 @keyframes spin {
@@ -554,9 +545,8 @@ body.register-page {
   }
 }
 
-/* Loading text */
-.loader-text {
-  font-size: 1.2rem;
-  font-weight: bold;
+.inline-loader .loader-text {
+  font-size: 1rem;
   color: #333;
+  font-weight: bold;
 }
