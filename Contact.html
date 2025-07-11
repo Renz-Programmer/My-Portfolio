@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-contact page-layout">
+
+  <header>
+    <div class="logo-title">
+      <img src="feutech_10.png" alt="FEU Tech Logo" class="logo">
+      <h1 id="headline">Contact Me</h1>
+    </div>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Registration Form.html">Registration</a>
+    </nav>
+  </header>
+
+  <main class="contact-main fade-section">
+    <section class="contact-form-container">
+      <form id="contact-form" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit" aria-label="Send your message">Send</button>
+        <p class="success" id="response"></p> 
+      </form>
+    </section>
+
+    <div class="social-media">
+      <a href="https://www.facebook.com/Renzy.Shao" target="_blank">
+        <img src="FB.png" alt="Facebook Profile of Renzy" width="40" />
+      </a>
+      <a href="https://www.instagram.com/renzzzzzzzzzzzy/" target="_blank">
+        <img src="IG.png" alt="Instagram Profile of Renzy" width="40" />
+      </a>
+    </div>
+
+    <div class="back-button">
+      <button onclick="history.back()" aria-label="Go back to previous page">← Back</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const scriptURL = "https://script.google.com/macros/s/AKfycbx1T2BMFYcvaU1viuGTPruYDVgbK4l5EGeXuqmi4uUYH3u5I-7y7yPYi_uXHAhhZzCV-g/exec";
+      const form = document.getElementById("contact-form");
+      const responseMsg = document.getElementById("response");
+
+      if (!form) {
+        console.error("Form not found in the DOM!");
+        return;
+      }
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const formData = new FormData(form);
+
+        fetch(scriptURL, {
+          method: "POST",
+          body: formData
+        })
+        .then(response => {
+          if (!response.ok) throw new Error("Network response was not ok");
+          return response.text();
+        })
+        .then(data => {
+          responseMsg.textContent = "Message sent successfully!";
+          responseMsg.style.color = "green";
+          form.reset();
+        })
+        .catch(error => {
+          responseMsg.textContent = "Error sending message.";
+          responseMsg.style.color = "red";
+          console.error("Error!", error.message);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

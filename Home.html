@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-home page-layout">
+  <header>
+    <div class="logo-title">
+      <img src="feutech_10.png" alt="Logo" class="logo">
+      <h1 id="headline">Welcome to My Portfolio</h1>
+    </div>
+    <nav>
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="Registration Form.html">Registration</a>
+    </nav>
+  </header>
+
+  <main>
+<section class="about-flex">
+  <img src="PIC.jpg" alt="My Photo" class="about-image">
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm Lorenz V. Figuerra and I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). 
+      I’m passionate about web development, design, and creating user-friendly digital experiences.
+    </p>
+  </div>
+</section>
+
+
+    <hr class="section-divider">
+
+<section class="projects-section">
+  <h1>My Projects</h1>
+  <div class="projects-grid">
+    <div class="project-card">
+      <a href="Project 2.html">
+        <h3>Project 2</h3>
+        <img src="PT BG.png "Screenshot of Project 2" class="project-thumb">
+      </a>
+    </div>
+    <div class="project-card">
+      <a href="Project 3.html">
+        <h3>Project 3</h3>
+        <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
+      </a>
+    </div>
+    <div class="project-card">
+      <a href="Project 4.html">
+        <h3>Project 4</h3>
+        <img src="RESUME IMG.png" alt="Screenshot of Project 4" class ="project-thumb">
+      </a>
+    </div>
+  </div>
+</section>
+<button class="color-button" onclick="changeHeadlineColor()">Change Headline Color</button>
+  </main>
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+<script>
+  function changeHeadlineColor() {
+    const colors = ["crimson", "blue", "green", "orange", "purple", "gold", "teal", "#ff1493", "#2ecc71"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.getElementById("headline").style.color = randomColor;
+  }
+</script>
+
+
+</body>
+</html>

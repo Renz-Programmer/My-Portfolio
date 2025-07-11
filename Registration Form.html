@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="register-page">
+
+  <div class="back-button top-right">
+    <button onclick="location.href='Home.html'">← Back to Homepage</button>
+  </div>
+
+  <h1 id="headline">Register Below</h1>
+
+  <form id="registerForm">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <input type="number" id="age" placeholder="Your Age" min="0" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="thank-you" id="thankYouMessage" style="display:none;"></div>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const thankYou = document.getElementById('thankYouMessage');
+    const headline = document.getElementById('headline');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const age = parseInt(document.getElementById('age').value);
+
+      if (isNaN(age) || age < 0) {
+        alert("Please enter a valid (non-negative) age.");
+        return;
+      }
+
+      thankYou.innerHTML = `
+        🎉 Thank you for registering!<br><br>
+        <strong>Name:</strong> ${name}<br>
+        <strong>Email:</strong> ${email}<br>
+        <strong>Age:</strong> ${age}
+      `;
+      thankYou.style.display = 'block';
+      headline.style.color = '#e74c3c';
+
+      setTimeout(() => {
+        askToRegisterAgain();
+      }, 2000);
+    });
+
+    function askToRegisterAgain() {
+      let answer = prompt("Would you like to register again? [y/n]");
+      if (answer && answer.toLowerCase() === 'y') {
+        form.reset();
+        thankYou.style.display = 'none';
+        headline.style.color = '#fff';
+      } else {
+        window.location.href = "Home.html";
+      }
+    }
+
+    window.addEventListener('pageshow', function (event) {
+      if (event.persisted) {
+        form.reset();
+        thankYou.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
