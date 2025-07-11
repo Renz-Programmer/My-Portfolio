@@ -522,3 +522,24 @@ body.register-page {
   75% { color: blue; }
   100% { color: purple; }
 }
+.project-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  padding: 6px 14px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+  background-color: #0056b3;
+}
