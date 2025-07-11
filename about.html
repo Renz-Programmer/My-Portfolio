@@ -12,24 +12,19 @@
       <h1 id="headline">About Me</h1>
     </div>
     <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="registration.html">Registration</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="registration.html">Registration</a>
     </nav>
   </header>
 
   <main>
-    <button onclick="changeHeadlineColor()">Change Headline Color</button>
     <div class="about-box">
-  <p>
-    Hello! I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). I’m passionate about web development, design, and creating user-friendly digital experiences. I enjoy learning new technologies, working on hands-on projects, and continuously improving my skills in HTML, CSS, and front-end frameworks.</p>
-  <p>
-  In my free time, I like solving coding challenges, and building personal websites to apply and expand my knowledge. I find joy in turning creative ideas into functional web interfaces, and I take pride in writing clean, efficient code. I believe that good design and usability go hand-in-hand with strong technical skills.</p>
-  <p>
-    Looking ahead, I aspire to become a full-stack developer and contribute to impactful tech solutions. I'm currently working on improving my JavaScript and exploring back-end technologies such as Node.js and databases. Whether it's through academic projects or personal learning, I'm committed to growing in this field and staying up-to-date with the latest tools and trends in the web development industry.
-  </p>
-</div>
+      <p>Hello! I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). I’m passionate about web development, design, and creating user-friendly digital experiences. I enjoy learning new technologies, working on hands-on projects, and continuously improving my skills in HTML, CSS, and front-end frameworks.</p>
+      <p>In my free time, I like solving coding challenges and building personal websites to apply and expand my knowledge. I find joy in turning creative ideas into functional web interfaces, and I take pride in writing clean, efficient code. I believe that good design and usability go hand-in-hand with strong technical skills.</p>
+      <p>Looking ahead, I aspire to become a full-stack developer and contribute to impactful tech solutions. I'm currently working on improving my JavaScript and exploring back-end technologies such as Node.js and databases. Whether it's through academic projects or personal learning, I'm committed to growing in this field and staying up-to-date with the latest tools and trends in the web development industry.</p>
+    </div>
     <div class="back-button">
       <button onclick="history.back()">← Back</button>
     </div>
@@ -38,14 +33,5 @@
   <footer>
     <p>© 2025 My Website</p>
   </footer>
-  </main>
-
-  <script>
-    function changeHeadlineColor() {
-      const colors = ["crimson", "blue", "green", "orange", "purple", "gold", "#2ecc71", "#ff1493"];
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-      document.getElementById("headline").style.color = randomColor;
-    }
-  </script>
 </body>
 </html>
