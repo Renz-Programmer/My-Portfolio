@@ -2,70 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Website</title>
+  <title>About</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* Animated headline */
-    #headline {
-      animation: colorChange 5s infinite alternate;
-    }
-
-    @keyframes colorChange {
-      0%   { color: crimson; }
-      25%  { color: orange; }
-      50%  { color: green; }
-      75%  { color: blue; }
-      100% { color: purple; }
-    }
-
-    /* Tabs styling */
-    .code-tabs-section {
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-
-    .tab-buttons button {
-      padding: 10px 20px;
-      margin: 5px;
-      cursor: pointer;
-      background-color: #444;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .tab-buttons button:hover {
-      background-color: #666;
-    }
-
-    .tab-content {
-      background-color: #1e1e1e;
-      color: #00ffcc;
-      padding: 15px;
-      margin-top: 15px;
-      border-radius: 10px;
-      text-align: left;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-      overflow-x: auto;
-    }
-
-    pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
-  </style>
 </head>
-
-<body class="bg-home page-layout">
+<body class="bg-about page-layout">
   <header>
     <div class="logo-title">
       <img src="feutech_10.png" alt="Logo" class="logo">
-      <h1 id="headline">Welcome to My Portfolio</h1>
+      <h1 id="headline">About Me</h1>
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -76,91 +20,33 @@
   </header>
 
   <main>
-    <section class="about-flex">
-      <img src="PIC.jpg" alt="My Photo" class="about-image">
-      <div class="about-content">
-        <h2>About Me</h2>
-        <p>
-          Hello! I'm Lorenz V. Figuerra and I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). 
-          I’m passionate about web development, design, and creating user-friendly digital experiences.
-        </p>
-      </div>
-    </section>
+    <!-- Tab Buttons -->
+    <div class="tab-buttons">
+      <button onclick="showTab('about')">About Me</button>
+      <button onclick="showTab('education')">Education</button>
+      <button onclick="showTab('goals')">Goals</button>
+    </div>
 
-    <hr class="section-divider">
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading-spinner" style="display:none;">Loading...</div>
 
-    <section class="projects-section">
-      <h1>My Projects</h1>
-      <div class="projects-grid">
-        <div class="project-card">
-          <a href="Project 2.html">
-            <h3 style="color: blue;">Project 2</h3>
-            <img src="PT BG.png" alt="Screenshot of Project 2" class="project-thumb">
-          </a>
-        </div>
-        <div class="project-card">
-          <a href="Project 3.html">
-            <h3 style="color: blue;">Project 3</h3>
-            <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
-          </a>
-        </div>
-        <div class="project-card">
-          <a href="Project 4.html">
-            <h3 style="color: blue;">Project 4</h3>
-            <img src="RESUME IMG.png" alt="Screenshot of Project 4" class="project-thumb">
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- Tab Content -->
+    <div id="about" class="tab-content" style="display:block;">
+      <p>Hello! I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). I’m passionate about web development, design, and creating user-friendly digital experiences.</p>
+      <p>In my free time, I enjoy solving coding challenges and building personal websites to apply and expand my knowledge. I find joy in turning creative ideas into functional web interfaces and take pride in writing clean, efficient code.</p>
+    </div>
 
-    <!-- CODE TABS SECTION -->
-    <section class="code-tabs-section">
-      <h2>View Project Codes</h2>
-      <div class="tab-buttons">
-        <button onclick="showTab('project2')">Project 2 Code</button>
-        <button onclick="showTab('project3')">Project 3 Code</button>
-        <button onclick="showTab('project4')">Project 4 Code</button>
-      </div>
+    <div id="education" class="tab-content">
+      <p>Currently enrolled at FEU Institute of Technology, pursuing a degree in BSIT-WMA. I’ve completed various academic projects involving HTML, CSS, JavaScript, and UI/UX fundamentals.</p>
+    </div>
 
-      <div class="tab-content" id="project2">
-        <pre><code>
-// Example code for Project 2
-<!DOCTYPE html>
-<html>
-<head><title>Periodic Table</title></head>
-<body>
-  <!-- your Periodic Table HTML code -->
-</body>
-</html>
-        </code></pre>
-      </div>
+    <div id="goals" class="tab-content">
+      <p>My goal is to become a full-stack developer. I'm currently enhancing my skills in JavaScript and exploring Node.js and databases. I aim to build impactful web applications and stay updated with industry trends.</p>
+    </div>
 
-      <div class="tab-content" id="project3" style="display:none">
-        <pre><code>
-// Example code for Project 3
-<!DOCTYPE html>
-<html>
-<head><title>SDG Goals Website</title></head>
-<body>
-  <!-- your SDG Goals HTML code -->
-</body>
-</html>
-        </code></pre>
-      </div>
-
-      <div class="tab-content" id="project4" style="display:none">
-        <pre><code>
-// Example code for Project 4
-<!DOCTYPE html>
-<html>
-<head><title>Resume</title></head>
-<body>
-  <!-- your Resume HTML code -->
-</body>
-</html>
-        </code></pre>
-      </div>
-    </section>
+    <div class="back-button">
+      <button onclick="history.back()">← Back</button>
+    </div>
   </main>
 
   <footer>
@@ -169,9 +55,16 @@
 
   <script>
     function showTab(tabId) {
+      const loading = document.getElementById('loading');
       const tabs = document.querySelectorAll('.tab-content');
+
       tabs.forEach(tab => tab.style.display = 'none');
-      document.getElementById(tabId).style.display = 'block';
+      loading.style.display = 'block';
+
+      setTimeout(() => {
+        loading.style.display = 'none';
+        document.getElementById(tabId).style.display = 'block';
+      }, 500);
     }
   </script>
 </body>
