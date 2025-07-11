@@ -4,32 +4,7 @@
   <meta charset="UTF-8">
   <title>My Personal Website</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .loader-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.8);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .loader-overlay img {
-      width: 100px;
-      height: auto;
-    }
-
-    .loader-text {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #333;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-home page-layout">
   <header>
@@ -46,17 +21,52 @@
   </header>
 
   <main>
+    <section class="about-flex">
+      <img src="PIC.jpg" alt="My Photo" class="about-image">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>Hello! I'm Lorenz V. Figuerra and I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). I’m passionate about web development, design, and creating user-friendly digital experiences.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="projects-section">
+      <h1>My Projects</h1>
+      <div class="projects-grid">
+        <div class="project-card">
+          <a href="Project 2.html">
+            <h3>Project 2</h3>
+            <img src="PT BG.png" alt="Screenshot of Project 2" class="project-thumb">
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="Project 3.html">
+            <h3>Project 3</h3>
+            <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="Project 4.html">
+            <h3>Project 4</h3>
+            <img src="RESUME IMG.png" alt="Screenshot of Project 4" class="project-thumb">
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 My Website</p>
   </footer>
 
+  <!-- 🔁 LOADER (text + spinner) -->
   <div class="loader-overlay" id="loader">
-    <img src="loading.gif" alt="Loading...">
+    <div class="spinner"></div>
     <div class="loader-text">Loading...</div>
   </div>
 
+  <!-- 🔁 JS for loader animation -->
   <script>
     const links = document.querySelectorAll("a");
     const loader = document.getElementById("loader");
@@ -70,7 +80,7 @@
           loader.style.display = "flex";
           setTimeout(() => {
             window.location.href = href;
-          }, 1200); // Delay in ms before navigating (adjust as needed)
+          }, 1200); // adjust delay if needed
         });
       }
     });
