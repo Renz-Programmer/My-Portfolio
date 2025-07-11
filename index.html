@@ -5,6 +5,20 @@
   <title>My Personal Website</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    #headline {
+      animation: colorChange 5s infinite alternate;
+    }
+
+    @keyframes colorChange {
+      0%   { color: crimson; }
+      25%  { color: orange; }
+      50%  { color: green; }
+      75%  { color: blue; }
+      100% { color: purple; }
+    }
+  </style>
 </head>
 
 <body class="bg-home page-layout">
@@ -14,66 +28,54 @@
       <h1 id="headline">Welcome to My Portfolio</h1>
     </div>
     <nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="registration.html">Registration</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="registration.html">Registration</a>
     </nav>
   </header>
 
   <main>
-<section class="about-flex">
-  <img src="PIC.jpg" alt="My Photo" class="about-image">
-  <div class="about-content">
-    <h2>About Me</h2>
-    <p>
-      Hello! I'm Lorenz V. Figuerra and I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). 
-      I’m passionate about web development, design, and creating user-friendly digital experiences.
-    </p>
-  </div>
-</section>
-
+    <section class="about-flex">
+      <img src="PIC.jpg" alt="My Photo" class="about-image">
+      <div class="about-content">
+        <h2>About Me</h2>
+        <p>
+          Hello! I'm Lorenz V. Figuerra and I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). 
+          I’m passionate about web development, design, and creating user-friendly digital experiences.
+        </p>
+      </div>
+    </section>
 
     <hr class="section-divider">
 
-<section class="projects-section">
-  <h1>My Projects</h1>
-  <div class="projects-grid">
-    <div class="project-card">
-      <a href="Project 2.html">
-        <h3>Project 2</h3>
-        <img src="PT BG.png "Screenshot of Project 2" class="project-thumb">
-      </a>
-    </div>
-    <div class="project-card">
-      <a href="Project 3.html">
-        <h3>Project 3</h3>
-        <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
-      </a>
-    </div>
-    <div class="project-card">
-      <a href="Project 4.html">
-        <h3>Project 4</h3>
-        <img src="RESUME IMG.png" alt="Screenshot of Project 4" class ="project-thumb">
-      </a>
-    </div>
-  </div>
-</section>
-<button class="color-button" onclick="changeHeadlineColor()">Change Headline Color</button>
+    <section class="projects-section">
+      <h1>My Projects</h1>
+      <div class="projects-grid">
+        <div class="project-card">
+          <a href="Project 2.html">
+            <h3>Project 2</h3>
+            <img src="PT BG.png" alt="Screenshot of Project 2" class="project-thumb">
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="Project 3.html">
+            <h3>Project 3</h3>
+            <img src="SDG BG.png" alt="Screenshot of Project 3" class="project-thumb">
+          </a>
+        </div>
+        <div class="project-card">
+          <a href="Project 4.html">
+            <h3>Project 4</h3>
+            <img src="RESUME IMG.png" alt="Screenshot of Project 4" class="project-thumb">
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer>
     <p>© 2025 My Website</p>
   </footer>
-<script>
-  function changeHeadlineColor() {
-    const colors = ["crimson", "blue", "green", "orange", "purple", "gold", "teal", "#ff1493", "#2ecc71"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.getElementById("headline").style.color = randomColor;
-  }
-</script>
-
-
 </body>
 </html>
-
-
