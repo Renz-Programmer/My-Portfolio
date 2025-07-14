@@ -23,23 +23,35 @@
 
   <div class="thank-you" id="thankYouMessage" style="display:none;"></div>
 
-  <script>
-    const form = document.getElementById('registerForm');
-    const thankYou = document.getElementById('thankYouMessage');
-    const headline = document.getElementById('headline');
+<script>
+  const form = document.getElementById('registerForm');
+  const thankYou = document.getElementById('thankYouMessage');
+  const headline = document.getElementById('headline');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxP-V37lW4T2NUM5EDocawp5KbLIwLf6JjN9_D_Ln4m_xQiydYOld-8P-zF8fqSnXVE/exec';
 
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const age = parseInt(document.getElementById('age').value);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      if (isNaN(age) || age < 0) {
-        alert("Please enter a valid (non-negative) age.");
-        return;
-      }
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const age = parseInt(document.getElementById('age').value);
 
+    if (isNaN(age) || age < 0) {
+      alert("Please enter a valid (non-negative) age.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('age', age);
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
       thankYou.innerHTML = `
         🎉 Thank you for registering!<br><br>
         <strong>Name:</strong> ${name}<br>
@@ -52,26 +64,30 @@
       setTimeout(() => {
         askToRegisterAgain();
       }, 2000);
+    })
+    .catch(error => {
+      alert('Error saving to Google Sheet: ' + error.message);
     });
+  });
 
-    function askToRegisterAgain() {
-      let answer = prompt("Would you like to register again? [y/n]");
-      if (answer && answer.toLowerCase() === 'y') {
-        form.reset();
-        thankYou.style.display = 'none';
-        headline.style.color = '#fff';
-      } else {
-        window.location.href = "index.html";
-      }
+  function askToRegisterAgain() {
+    let answer = prompt("Would you like to register again? [y/n]");
+    if (answer && answer.toLowerCase() === 'y') {
+      form.reset();
+      thankYou.style.display = 'none';
+      headline.style.color = '#fff';
+    } else {
+      window.location.href = "index.html";
     }
+  }
 
-    window.addEventListener('pageshow', function (event) {
-      if (event.persisted) {
-        form.reset();
-        thankYou.style.display = 'none';
-      }
-    });
-  </script>
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      form.reset();
+      thankYou.style.display = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>
