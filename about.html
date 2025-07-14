@@ -4,8 +4,27 @@
   <meta charset="UTF-8">
   <title>About</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .about-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: justify;
+      max-width: 800px;
+      color: #ffffff;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+  </style>
 </head>
 <body class="bg-about page-layout">
+
+  <div class="stars"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
   <header>
     <div class="logo-title">
       <img src="feutech_10.png" alt="Logo" class="logo">
@@ -19,13 +38,13 @@
     </nav>
   </header>
 
-  <main>
+  <main class="centered-main">
     <div class="about-box">
       <p>Hello! I'm a 2nd year Bachelor of Science in Information Technology student majoring in Web and Mobile Application (BSIT-WMA). I’m passionate about web development, design, and creating user-friendly digital experiences. I enjoy learning new technologies, working on hands-on projects, and continuously improving my skills in HTML, CSS, and front-end frameworks.</p>
       <p>In my free time, I like solving coding challenges and building personal websites to apply and expand my knowledge. I find joy in turning creative ideas into functional web interfaces, and I take pride in writing clean, efficient code. I believe that good design and usability go hand-in-hand with strong technical skills.</p>
       <p>Looking ahead, I aspire to become a full-stack developer and contribute to impactful tech solutions. I'm currently working on improving my JavaScript and exploring back-end technologies such as Node.js and databases. Whether it's through academic projects or personal learning, I'm committed to growing in this field and staying up-to-date with the latest tools and trends in the web development industry.</p>
     </div>
-    <div class="back-button">
+    <div class="back-button" style="margin-top: 30px;">
       <button onclick="history.back()">← Back</button>
     </div>
   </main>
@@ -33,5 +52,6 @@
   <footer>
     <p>© 2025 My Website</p>
   </footer>
+
 </body>
 </html>
